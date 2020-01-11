@@ -77,7 +77,7 @@
 			<div class="bg-white py-2 collapse-inner rounded">
 				<h6 class="collapse-header">Categories of Products</h6>
 				<a class="collapse-item" href="<?php echo base_url() . 'Category/add' ?>">New Category</a>
-				<a class="collapse-item" href="login.html">View All</a>
+				<a class="collapse-item" href="<?php echo base_url() . 'Category' ?>">View All</a>
 
 			</div>
 		</div>
