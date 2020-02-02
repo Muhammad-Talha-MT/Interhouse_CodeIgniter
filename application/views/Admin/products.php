@@ -24,8 +24,7 @@
                     <h1 class="h3 mb-2 text-gray-800">Products</h1>
                     <p class="mb-4">This is all Products Data </p>
                     <div class="">
-                        <a href="<?php echo base_url() . 'Product/addProduct' ?>"
-                            class="btn btn-primary btn-icon-split">
+                        <a href="<?php echo base_url() . 'Product/add' ?>" class="btn btn-primary btn-icon-split">
                             <span class="icon text-white-50">
                                 <i class="fas fa-plus right"></i>
                             </span>
@@ -76,8 +75,8 @@
                                             <td><?php echo $p['brandName']; ?></td>
                                             <td><?php echo $p['catagoryName']; ?></td>
                                             <td><?php echo $p['price']; ?></td>
-                                            <td><a href="#" class="btn btn-success btn-circle"><i
-                                                        class="fas fa-edit"></i></a>
+                                            <td><a href="<?php echo base_url() . 'Product/gotoeditproduct/' . $p['id'] ?>"
+                                                    class="btn btn-success btn-circle"><i class="fas fa-edit"></i></a>
                                             </td>
                                             <td><a href="<?php echo base_url() . 'Product/deleteProduct/' . $p['id'] ?>"
                                                     class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
