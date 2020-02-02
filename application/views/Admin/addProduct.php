@@ -38,7 +38,7 @@ function checkImage(id) {
             image.onload = function() {
                 var height = this.height;
                 var width = this.width;
-                if (height < 505 || width < 625) {
+                if (height < 625|| width < 505) {
                     alert("size must be atleast 505x625")
                     valid = false;
                 }
