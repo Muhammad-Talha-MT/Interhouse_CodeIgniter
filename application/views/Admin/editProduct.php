@@ -44,20 +44,22 @@ function readURL(input, id) {
                                             <div class="form-group col-md-6">
                                                 <label for="productName">Pruduct Name</label>
                                                 <input type="text" class="form-control" id="productName"
-                                                    placeholder="Product Name" name="productName" required>
+                                                    placeholder="Product Name" name="productName"
+                                                    value="<?php echo $product['productName']?>" required>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="productDescription">Description</label>
                                                 <textarea class="form-control" id="description"
                                                     placeholder="Product Description" name="description"
-                                                    required></textarea>
+                                                    required><?php echo $product['productDescription']?></textarea>
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-4">
                                                 <label for="price">Price</label>
                                                 <input class="form-control" id="price" placeholder="0.00" name="price"
-                                                    type="number" step="0.01" min="0.01" max="100000" required>
+                                                    type="number" step="0.01" min="0.01" max="100000"
+                                                    value="<?php echo $product['price']?>" required>
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label for="catagory">catagory</label>
@@ -89,11 +91,12 @@ function readURL(input, id) {
                                             <div class="form-group col-md-4">
                                                 <label>Cover</label>
                                                 <img style="max-width: 180px; border-radius: 5px;" id="cover"
-                                                    src="<?php echo base_url() . 'upload/download.png'; ?>"
-                                                    alt="your image" />
+                                                    src="<?php echo base_url() . 'upload/covers/'.$product['cover']?>"
+                                                    alt=" your image" />
                                                 <input style="max-width: 180px; border-radius: 5px; max-height: 50px"
                                                     id="coverImage" type="file" accept="image/png" name="coverImage"
                                                     onchange="readURL(this,'cover');" style="margin-left: 50px"
+                                                    value="<?php echo base_url() . 'upload/covers/'.$product['cover']?>"
                                                     required>
                                             </div>
                                         </div>
@@ -101,30 +104,33 @@ function readURL(input, id) {
                                             <div class="form-group col-md-4">
                                                 <label>Detail Image 1</label>
                                                 <img style="max-width: 180px; border-radius: 5px;" id="detail1"
-                                                    src="<?php echo base_url() . 'upload/download.png'; ?>"
+                                                    src="<?php echo base_url() . 'upload/details/'.$product['detail1']; ?>"
                                                     alt="your image" />
                                                 <input style="max-width: 180px; border-radius: 5px; max-height: 50px"
                                                     id="detailImage1" type="file" accept="image/png" name="detailImage1"
                                                     onchange="readURL(this,'detail1');" style="margin-left: 50px"
+                                                    value="<?php echo base_url() . 'upload/details/'.$product['detail1']; ?>"
                                                     required>
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label>Detail Image 2</label>
                                                 <img style="max-width: 180px; border-radius: 5px;" id="detail2"
-                                                    src="<?php echo base_url() . 'upload/download.png'; ?>"
+                                                    src="<?php echo base_url() . 'upload/details/'.$product['detail2']; ?>"
                                                     alt="your image" />
                                                 <input style="max-width: 180px; border-radius: 5px; max-height: 50px"
                                                     id="detailImage2" type="file" accept="image/png" name="detailImage2"
+                                                    value="<?php echo base_url() . 'upload/details/'.$product['detail2']; ?>"
                                                     onchange="readURL(this,'detail2');" style="margin-left: 50px"
                                                     required>
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label>Detail Image 3</label>
                                                 <img style="max-width: 180px; border-radius: 5px;" id="detail3"
-                                                    src="<?php echo base_url() . 'upload/download.png'; ?>"
+                                                    src="<?php echo base_url() . 'upload/details/'.$product['detail3']; ?>"
                                                     alt="your image" />
                                                 <input style="max-width: 180px; border-radius: 5px; max-height: 50px"
                                                     id="detailImage3" type="file" accept="image/png" name="detailImage3"
+                                                    value="<?php echo base_url() . 'upload/details/'.$product['detail3']; ?>"
                                                     onchange="readURL(this,'detail3');" style="margin-left: 50px"
                                                     required>
                                             </div>

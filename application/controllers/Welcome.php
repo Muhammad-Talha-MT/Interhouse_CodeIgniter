@@ -21,6 +21,8 @@ class Welcome extends CI_Controller
 	 */
 	public function index()
 	{
-		$this->load->view('Admin/index.php');
+		$this->load->model('Product_model');
+		$data['products'] = $this->Product_model->getProducts();
+		$this->load->view('User/index.php',$data);
 	}
 }
