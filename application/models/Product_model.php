@@ -30,5 +30,11 @@ class Product_model extends CI_Model
 		$this->db->where("id", $id);
 		return $this->db->get("products")->row_array();
 	}
+	
+	function getProductsByUniqueId($id)
+	{
+		$this->db->where('uniqueId',$id);
+		return $this->db->get("products")->row_array();
+	}
 }
 ?>

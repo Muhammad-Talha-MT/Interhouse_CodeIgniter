@@ -21,8 +21,9 @@ class Welcome extends CI_Controller
 	 */
 	public function index()
 	{
+		$this->load->library('cart');
 		$this->load->model('Product_model');
 		$data['products'] = $this->Product_model->getProducts();
-		$this->load->view('User/index.php',$data);
+		$this->load->view('User/new.php', $data);
 	}
 }

@@ -64,7 +64,7 @@
 						<i class="zmdi zmdi-search"></i>
 					</div>
 
-					<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="2">
+					<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="<?php echo count($this->cart->contents()) ?>">
 						<i class="zmdi zmdi-shopping-cart"></i>
 					</div>
 
@@ -188,7 +188,6 @@
 		</div>
 	</div>
 </header>
-
 <!-- Cart -->
 <div class="wrap-header-cart js-panel-cart">
 	<div class="s-full js-hide-cart"></div>
@@ -206,58 +205,28 @@
 
 		<div class="header-cart-content flex-w js-pscroll">
 			<ul class="header-cart-wrapitem w-full">
-				<li class="header-cart-item flex-w flex-t m-b-12">
-					<div class="header-cart-item-img">
-						<img src="images/item-cart-01.jpg" alt="IMG">
-					</div>
+				<?php foreach ($this->cart->contents() as $p) { ?>
+					<li class="header-cart-item flex-w flex-t m-b-12">
+						<div class="header-cart-item-img">
+							<img src="<?php echo base_url() . 'upload/covers/' . $p['image']; ?>" alt="IMG">
+						</div>
 
-					<div class="header-cart-item-txt p-t-8">
-						<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
-							White Shirt Pleat
-						</a>
+						<div class="header-cart-item-txt p-t-8">
+							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
+								<?php echo $p['name']; ?>
+							</a>
 
-						<span class="header-cart-item-info">
-							1 x $19.00
-						</span>
-					</div>
-				</li>
-
-				<li class="header-cart-item flex-w flex-t m-b-12">
-					<div class="header-cart-item-img">
-						<img src="images/item-cart-02.jpg" alt="IMG">
-					</div>
-
-					<div class="header-cart-item-txt p-t-8">
-						<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
-							Converse All Star
-						</a>
-
-						<span class="header-cart-item-info">
-							1 x $39.00
-						</span>
-					</div>
-				</li>
-
-				<li class="header-cart-item flex-w flex-t m-b-12">
-					<div class="header-cart-item-img">
-						<img src="images/item-cart-03.jpg" alt="IMG">
-					</div>
-
-					<div class="header-cart-item-txt p-t-8">
-						<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
-							Nixon Porter Leather
-						</a>
-
-						<span class="header-cart-item-info">
-							1 x $17.00
-						</span>
-					</div>
-				</li>
+							<span class="header-cart-item-info">
+								<?php echo $p['qty']; ?> x $<?php echo $p['price']; ?>
+							</span>
+						</div>
+					</li>
+				<?php } ?>
 			</ul>
 
 			<div class="w-full">
 				<div class="header-cart-total w-full p-tb-40">
-					Total: $75.00
+					Total:$<?php echo $this->cart->format_number($this->cart->total()); ?>
 				</div>
 
 				<div class="header-cart-buttons flex-w w-full">

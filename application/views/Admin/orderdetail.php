@@ -23,14 +23,14 @@
 					<!-- Page Heading -->
 					<h1 class="h3 mb-2 text-gray-800">Products</h1>
 					<p class="mb-4">This is all Products Data </p>
-					<div class="">
+					<!-- <div class="">
 						<a href="<?php echo base_url() . 'Product/add' ?>" class="btn btn-primary btn-icon-split">
 							<span class="icon text-white-50">
 								<i class="fas fa-plus right"></i>
 							</span>
-							<span class="text">New Product</span>
+							<span class="text">New </span>
 						</a>
-					</div><br>
+					</div><br> -->
 
 					<!-- DataTales Example -->
 					<div class="card shadow mb-4">
@@ -42,11 +42,9 @@
 								<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 									<thead>
 										<tr>
-											<th>Picture</th>
-											<th>Product Name</th>
-											<th>Product Description</th>
-											<th>Brand Name</th>
-											<th>Catagory Name</th>
+											<th>Order Id</th>
+											<th>Product Id</th>
+											<th>Quantity</th>
 											<th>Price</th>
 											<th>Edit</th>
 											<th>Delete</th>
@@ -54,32 +52,32 @@
 									</thead>
 									<tfoot>
 										<tr>
-											<th>Picture</th>
-											<th>Product Name</th>
-											<th>Product Description</th>
-											<th>Brand Name</th>
-											<th>Catagory Name</th>
+											<th>Order Id</th>
+											<th>Product Id</th>
+											<th>Quantity</th>
 											<th>Price</th>
 											<th>Edit</th>
 											<th>Delete</th>
 										</tr>
 									</tfoot>
 									<tbody>
-										<?php foreach ($productList as $p) { ?>
-											<tr>
-												<td><img class="img-thumbnail" src="<?php echo base_url() . 'upload/details/' . $p['picture']; ?>" alt="No Picture"></td>
-												<td><?php echo $p['productName']; ?></td>
-												<td><?php echo $p['productDescription']; ?></td>
-												<td><?php echo $p['brandName']; ?></td>
-												<td><?php echo $p['catagoryName']; ?></td>
-												<td><?php echo $p['price']; ?></td>
-												<td><a href="<?php echo base_url() . 'Product/gotoeditproduct/' . $p['id'] ?>" class="btn btn-success btn-circle"><i class="fas fa-edit"></i></a>
-												</td>
-												<td><a href="<?php echo base_url() . 'Product/deleteProduct/' . $p['id'] ?>" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
-												</td>
+										<?php
+										foreach ($orderdetail_list as $orderdetail) {
 
+										?>
+											<tr>
+												<td><?php echo $orderdetail['orderid']; ?></td>
+												<td><?php echo $orderdetail['productid']; ?></td>
+												<td><?php echo $orderdetail['qty']; ?></td>
+												<td><?php echo $orderdetail['price']; ?></td>
+
+												<td><a href="<?php echo base_url() . 'Order/edit/' . $orderdetail['orderdetailid']; ?>" class="btn btn-warning">Edit</a></td>
+												<td><a href="<?php echo base_url() . 'Order/delete/' . $orderdetail['orderdetailid']; ?>" class="btn btn-danger">Delete</a></td>
 											</tr>
-										<?php } ?>
+
+										<?php
+										}
+										?>
 									</tbody>
 								</table>
 							</div>
