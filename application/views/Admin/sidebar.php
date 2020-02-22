@@ -125,6 +125,20 @@
 			</div>
 		</div>
 	</li>
+	<li class="nav-item">
+		<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages4" aria-expanded="true" aria-controls="collapsePages4">
+			<i class="fas fa-fw fa-folder"></i>
+			<span>Banners</span>
+		</a>
+		<div id="collapsePages4" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+			<div class="bg-white py-2 collapse-inner rounded">
+				<h6 class="collapse-header">Banners of Main Page</h6>
+				<a class="collapse-item" href="<?php echo base_url() . 'banner/Add' ?>">New Banner</a>
+				<a class="collapse-item" href="<?php echo base_url() . 'banner' ?>">View All</a>
+
+			</div>
+		</div>
+	</li>
 	<!-- Nav Item - Charts -->
 	<li class="nav-item">
 		<a class="nav-link" href="charts.html">

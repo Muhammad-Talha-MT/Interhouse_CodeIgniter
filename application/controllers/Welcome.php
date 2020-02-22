@@ -23,7 +23,9 @@ class Welcome extends CI_Controller
 	{
 		$this->load->library('cart');
 		$this->load->model('Product_model');
+		$this->load->model('Banner_model');
+		$data['banners'] = $this->Banner_model->getBanners();
 		$data['products'] = $this->Product_model->getProducts();
-		$this->load->view('User/new.php', $data);
+		$this->load->view('User/index.php', $data);
 	}
 }
