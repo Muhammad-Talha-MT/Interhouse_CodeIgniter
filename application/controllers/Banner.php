@@ -39,6 +39,8 @@ class Banner extends CI_Controller
 		$dataToSend['name'] = $this->input->post('bannerName');
 		$dataToSend['title'] = $this->input->post('bannerTitle');
 		$dataToSend['image'] = $this->uploadImage();
+		print_r($dataToSend);
+		die();
 		$this->Banner_model->addBanner($dataToSend);
 		redirect(base_url() . 'Banner');
 	}
@@ -48,7 +50,7 @@ class Banner extends CI_Controller
 		$name = $this->input->post('bannerName');;
 		$config['upload_path'] = './upload/banners';
 		$config['allowed_types'] = 'png|jpg|jpeg';
-		$config['max_size'] = '10000';
+		$config['max_size'] = '100000000';
 		$config['file_name'] = $name . $imagestamp;
 		$this->load->library('upload', $config);
 		$this->upload->initialize($config);

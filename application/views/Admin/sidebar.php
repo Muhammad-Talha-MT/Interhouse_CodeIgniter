@@ -139,6 +139,20 @@
 			</div>
 		</div>
 	</li>
+	<li class="nav-item">
+		<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages5" aria-expanded="true" aria-controls="collapsePages4">
+			<i class="fas fa-fw fa-folder"></i>
+			<span>Services</span>
+		</a>
+		<div id="collapsePages5" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+			<div class="bg-white py-2 collapse-inner rounded">
+				<h6 class="collapse-header">Servies</h6>
+				<a class="collapse-item" href="<?php echo base_url() . 'service/Add' ?>">New Service</a>
+				<a class="collapse-item" href="<?php echo base_url() . 'service' ?>">View All Services</a>
+
+			</div>
+		</div>
+	</li>
 	<!-- Nav Item - Charts -->
 	<li class="nav-item">
 		<a class="nav-link" href="charts.html">

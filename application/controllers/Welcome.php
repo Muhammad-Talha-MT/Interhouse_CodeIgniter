@@ -22,10 +22,12 @@ class Welcome extends CI_Controller
 	public function index()
 	{
 		$this->load->library('cart');
+		$this->load->model('Service_model');
 		$this->load->model('Product_model');
 		$this->load->model('Banner_model');
 		$data['banners'] = $this->Banner_model->getBanners();
 		$data['products'] = $this->Product_model->getProducts();
+		$data['services'] = $this->Service_model->getServices();
 		$this->load->view('User/index.php', $data);
 	}
 }

@@ -131,4 +131,12 @@ class Product extends CI_Controller
 		$data['product'] = $this->Product_model->getProductsByUniqueId($id);
 		$this->load->view('User/productDetail', $data);
 	}
+
+	function allproducts()
+	{
+		$this->load->model('Product_model');
+		$data['products'] = $this->Product_model->getProducts();
+		$this->load->library('cart');
+		$this->load->view('User/allproducts', $data);
+	}
 }

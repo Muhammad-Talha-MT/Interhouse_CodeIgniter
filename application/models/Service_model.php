@@ -17,7 +17,7 @@ class service_model extends CI_Model
     }
     function update($id, $updateData)
 	{
-		$this->db->where("id=", $id);
+		$this->db->where("id", $id);
 		$this->db->update("services", $updateData);
 	}
     function delete($id)
@@ -31,4 +31,3 @@ class service_model extends CI_Model
 		return $this->db->get("services")->row_array();
 	}
 }
-?>

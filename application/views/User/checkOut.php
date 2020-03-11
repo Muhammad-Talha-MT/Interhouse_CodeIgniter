@@ -19,40 +19,48 @@
 		<div class="col-lg-12 col-xl-10 m-lr-auto m-b-100">
 			<div class="m-l-60 m-r--38 m-lr-0-xl">
 				<div class="wrap-table-shopping-cart">
-					<h1>You Order</h1>
-					<table class="table-shopping-cart tbl tbl-borderd">
-						<tr class="table_head">
-							<th class="column-1">No. of Products</th>
-							<th class="column-2">Grand Total</th>
-							<th class="column-3">Address</th>
-							<th class="column-4">Phone No.</th>
-							<th class="column-5">Email</th>
-							<th class="column-6">Check Out</th>
-						</tr>
-
-						<?php echo form_open(base_url() . 'Order/placeOrder'); ?>
-						<tr class="table_row">
-							<td class="column-1">
+					<h1>Your Order</h1>
+					<?php echo form_open(base_url() . 'Order/placeOrder'); ?>
+					<table class="table table-bordered">
+						<tr>
+							<th>No. of Products</th>
+							<td>
 								<?php echo count($this->cart->contents()); ?>
 							</td>
-							<td class="column-2">$<?php echo $this->cart->total(); ?>
-								<input name="grandTotal" type="hidden" value="<?php echo $this->cart->total(); ?>"></input></td>
-							<td class="column-3">
-								<textarea name="address" placeholder="Type Your Address"></textarea>
+						</tr>
+						<tr>
+							<th>Grand Total</th>
+							<td>$<?php echo $this->cart->total(); ?>
 							</td>
-							<td class="column-4">
-								<input type="text" name="phoneNo" placeholder="Phone Number"></input>
+							<input name="grandTotal" type="hidden" value="<?php echo $this->cart->total(); ?>"></input>
+						</tr>
+						<tr>
+							<th>Address</th>
+							<td>
+								<textarea class="form-control" name="address" placeholder="Type Your Address"></textarea>
 							</td>
-							<td class="column-4">
-								<input type="emial" name="email" placeholder="Email Addresss"></input>
+						</tr>
+						<tr>
+							<th>Phone Number</th>
+							<td>
+								<input class="form-control" type="text" name="phoneNo" placeholder="Phone Number"></input>
 							</td>
-							<td class="column-6">
+						</tr>
+						<tr>
+							<th>Email</th>
+							<td>
+								<input class="form-control" type="emial" name="email" placeholder="Email Addresss"></input>
+							</td>
+						</tr>
+						<tr>
+							<td>
 								<input class="btn btn-success" type="submit" value="Check Out"></input>
 							</td>
 						</tr>
-						<?php echo form_close(); ?>
+
 
 					</table>
+					<?php echo form_close(); ?>
 				</div>
 
 
