@@ -50,6 +50,16 @@
 											</div>
 										</div>
 										<div class="form-row">
+											<div class="form-group col-md-6">
+												<label for="minprice">Min Price</label>
+												<input type="number" class="form-control" id="minprice" placeholder="service description" name="minprice" required>
+											</div>
+											<div class="form-group col-md-6">
+												<label for="maxprice">Max Price</label>
+												<input type="number" class="form-control" id="maxprice" placeholder="service Name" name="maxprice" required>
+											</div>
+										</div>
+										<div class="form-row">
 											<div class="form-group col-md-4">
 												<label>Image</label>
 												<img style="max-width: 180px; border-radius: 5px;" id="image" src="<?php echo base_url() . 'upload/download.png'; ?>" alt="your image" />
